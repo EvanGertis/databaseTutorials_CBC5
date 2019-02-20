@@ -11,8 +11,9 @@ try {
     $stmt->execute();
 
     // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+    $stmt->setFetchMode(PDO::FETCH_ASSOC); 
     foreach ($stmt->fetchAll() as $key => $value) {
+        print_r($value);
         echo 'employee: '.$value['firstname'].' '.$value['lastname'].'<br>';
     }
 }
